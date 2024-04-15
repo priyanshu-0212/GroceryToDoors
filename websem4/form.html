@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    padding-right: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#displayed-city {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+    <h2>SIGN UP</h2>
+    <form>
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="button" id="signup-btn">Sign Up</button>
+        <div>
+            City:
+            <input type="text" id="city" name="city">
+        </div>
+          <div id="displayed-city"></div>
+
+          <input id="input1" type="text">
+          <button id="setValue">Set Value</button>
+          <button id="clearValue">Clear Value</button>
+      </form>
+      <script>
+            $(document).ready(function(){
+                $('#signup-btn').click(function(){
+                    var username=$('#username').val();
+                    alert("WELCOME, "+username+" !");
+                })
+                $("#city").change('input', function() {
+                    var cityEntered = $(this).val();
+                    $("#displayed-city").text("Your city is: " + cityEntered);
+                })
+                $('#setValue').click(function(){
+                    $('#input1').val("Hey there");
+                });
+                $('#clearValue').click(function(){
+                    $('#input1').val(null);
+                })
+            })
+      </script>
+</body>
+</html>
